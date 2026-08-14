@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Dark Store Ops</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <!-- Top Header Navigation -->
+        <header class="app-header">
+            <div class="header-left">
+                <h1>TASKFLOW</h1>
+                <span class="sub-nav">DARK STORE OPS &bull; CONTROL PANEL</span>
+            </div>
+            <div class="header-right">
+                <button id="themeToggleBtn" class="theme-btn">🌙 Dark</button>
+                <div class="user-avatar">👤</div>
+                <button class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- Create Project Section -->
+        <section class="panel-card">
+            <h3>CREATE PROJECT</h3>
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" id="projectName" placeholder="e.g. Dark Store Ops">
+                <button id="createProjectBtn" class="btn-primary" style="margin-top: 10px;">Create Project</button>
+            </div>
+        </section>
+
+        <!-- Bottom Grid: Quick Add (AI) & Add Task Manually -->
+        <div class="grid-two-col">
+            <!-- Quick Add (AI) -->
+            <section class="panel-card">
+                <h3>⚡ QUICK ADD (AI)</h3>
+                <div class="form-group">
+                    <label>Describe the task</label>
+                    <textarea id="aiTaskDesc" rows="3" placeholder="e.g. Restock shelves urgent next friday"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Project</label>
+                    <select id="aiProjectSelect">
+                        <option value="">Select...</option>
+                    </select>
+                </div>
+                <button id="addWithAiBtn" class="btn-cyan">Add with AI</button>
+            </section>
+
+            <!-- Add Task Manually -->
+            <section class="panel-card">
+                <h3 id="formTitleHeading">ADD TASK MANUALLY</h3>
+                <input type="hidden" id="editingTaskId" value="">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Title</label>
+                        <input type="text" id="taskTitle" placeholder="e.g. Restock shelves">
+                    </div>
+                    <div class="form-group half">
+                        <label>Day / Month / Year</label>
+                        <input type="date" id="taskDate">
+                    </div>
+                </div>
+
+                <!-- Description Field -->
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="taskDescription" rows="2" placeholder="Enter task details..."></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Priority</label>
+                        <select id="taskPriority">
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>Project</label>
+                        <select id="taskProjectSelect">
+                            <option value="">Select...</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="addTaskBtn" class="btn-cyan">Add Task</button>
+                <button id="cancelEditBtn" class="btn-secondary" style="display:none; margin-top:10px;">Cancel Edit</button>
+            </section>
+        </div>
+
+        <!-- Algorithms Engine Section: Sorting & Searching Controls -->
+        <section class="panel-card">
+            <h3>🧮 ALGORITHMS ENGINE (SORT & SEARCH)</h3>
+            <div class="algo-controls-grid">
+                <!-- Sorting Control -->
+                <div class="algo-group">
+                    <label>Insertion Sort / Priority Order</label>
+                    <div class="algo-row">
+                        <select id="sortSelect">
+                            <option value="default">Default Order</option>
+                            <option value="priority">Sort by Priority (Insertion Engine)</option>
+                        </select>
+                        <button id="applySortBtn" class="btn-primary">Apply Sort</button>
+                    </div>
+                </div>
+
+                <!-- Searching Control (Binary / Linear Search) -->
+                <div class="algo-group">
+                    <label>Exact Title Search (Binary / Linear)</label>
+                    <div class="algo-row">
+                        <input type="text" id="searchTitleInput" placeholder="Exact task title...">
+                        <select id="searchAlgoSelect">
+                            <option value="binary">Binary Search</option>
+                            <option value="linear">Linear Search</option>
+                        </select>
+                        <button id="searchBtn" class="btn-cyan">Run Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task List Section -->
+        <section class="panel-card">
+            <div class="tasks-header-flex">
+                <h3>YOUR TASKS</h3>
+                <button id="resetViewBtn" class="btn-secondary" style="padding: 4px 10px; font-size: 0.8rem;">Reset View</button>
+            </div>
+
+            <!-- Selection Action Bar -->
+            <div id="selection-action-bar" style="display: none; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; margin: 10px 0 15px 0; border-radius: 6px; align-items: center; justify-content: space-between; border: 1px solid rgba(255, 255, 255, 0.1);">
+                <span id="selected-count" style="font-size: 0.9rem; color: #fff;">0 items selected</span>
+                <button id="bulk-delete-btn" style="background: #e74c3c; color: white; border: none; padding: 6px 14px; cursor: pointer; border-radius: 4px; font-weight: 600;">Delete Selected</button>
+            </div>
+
+            <!-- ⬇️ Loader Element properly integrated ⬇️ -->
+            <div id="loadingSpinner">
+                <div class="spinner-circle"></div>
+                <div class="loader-text">Loading tasks...</div>
+            </div>
+
+            <div id="tasksContainer">
+                <p class="no-tasks" style="color: var(--text-muted);">No tasks created yet.</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

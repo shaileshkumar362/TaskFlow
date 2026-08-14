@@ -1,0 +1,139 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Dark Store Ops",
+            "owner_id": 1
+        },
+        {
+            "id": 2,
+            "name": "shailesh",
+            "owner_id": 1
+        },
+        {
+            "id": 3,
+            "name": "shailesh",
+            "owner_id": 1
+        },
+        {
+            "id": 4,
+            "name": "mini",
+            "owner_id": 1
+        },
+        {
+            "id": 5,
+            "name": "main",
+            "owner_id": 1
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1184799807,
+            "title": "Submit Job Application",
+            "description": "Review the application requirements for the desired position, update your resume and cover letter to highlight relevant experience, and submit the completed application before the deadline.",
+            "priority": "high",
+            "due_date": "Next Friday",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 2220836277,
+            "title": "Organize Cricket Practice Session",
+            "description": "Coordinate a friendly cricket match or practice session. This includes booking the local nets or field, checking that all gear (bats, balls, wickets, and safety pads) is ready, and reaching out to team members to confirm their availability and kickoff time.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 1783339218,
+            "title": "cricket",
+            "description": "cricket",
+            "priority": "medium",
+            "due_date": "Soon",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 1612346603,
+            "title": "Organize Friendly Cricket Match",
+            "description": "Coordinate with teammates to schedule a friendly cricket match. Responsibilities include booking the cricket ground, ensuring all necessary gear (bats, leather balls, wickets, and protective equipment) is ready, and confirming player availability and team lineups.",
+            "priority": "medium",
+            "due_date": "Next Saturday",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 3510681434,
+            "title": "Organize Casual Cricket Match",
+            "description": "Plan and coordinate a casual cricket match or practice session. This includes booking a suitable pitch or nets, inviting friends or team members, and ensuring all necessary equipment like bats, balls, and wickets are ready.",
+            "priority": "medium",
+            "due_date": "Soon",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 3475960661,
+            "title": "Organize Cricket Practice Session",
+            "description": "Coordinate with the team to schedule an upcoming cricket practice session. Book the local nets, check the condition of the team equipment (bats, balls, and protective gear), and send out RSVPs to confirm attendance.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 416057474,
+            "title": "Plan Friendly Cricket Match",
+            "description": "Organize a friendly cricket match with friends or teammates. This involves securing a local pitch, ensuring all necessary gear (bats, balls, wickets, and protective equipment) is available, confirming the player lineup, and coordinating the match time.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 4,
+            "completed": false
+        },
+        {
+            "id": 1454954075,
+            "title": "Organize Friendly Cricket Match",
+            "description": "Coordinate with friends or team members to set up a friendly cricket match. This includes booking a local pitch, ensuring all cricket gear like bats, balls, and wickets are ready, and confirming the final player lineup.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 1492871169,
+            "title": "Plan Casual Cricket Match",
+            "description": "Coordinate with friends or teammates to organize a casual cricket match. This involves booking a local net or pitch, ensuring all necessary equipment (bats, balls, wickets) is available, and confirming the headcount and match schedule.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 4288958036,
+            "title": "Schedule Weekly Cricket Match",
+            "description": "Coordinate with teammates to organize the next cricket match. This includes booking the local playing field, checking the condition of the sports gear (bats, balls, and wickets), and sending out RSVP invites to ensure we have enough players.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 3,
+            "completed": false
+        },
+        {
+            "id": 4164613203,
+            "title": "Plan Cricket Practice Session",
+            "description": "Coordinate with the team to schedule an upcoming cricket practice. This includes booking the local nets or pitch, checking the condition of the team gear (bats, balls, pads, and helmets), and sending out RSVP invites to all players to confirm attendance.",
+            "priority": "medium",
+            "due_date": "This Weekend",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 3292762235,
+            "title": "Begin Job Application Process",
+            "description": "Update your resume and portfolio, research open career opportunities, and start submitting applications to target companies.",
+            "priority": "high",
+            "due_date": "Next Monday",
+            "project_id": 4,
+            "completed": false
+        }
+    ]
+}
