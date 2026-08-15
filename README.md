@@ -17,7 +17,7 @@ An enterprise-grade, full-stack operational management system tailored for dark 
 ---
 ## 🔑 API Key Setup
 Code run karne ke liye aapko apni **Google Gemini API Key** ki zaroorat padegi. 
-1. Main file mein jahan `YOUR_API_KEY_HERE` likha hai, wahan apni key daal dein.
+1. Main file mein jahan `YOUR API KEY` likha hai, wahan apni key daal dein.
 2. Agar aapke paas key nahi hai, toh aap Google AI Studio se free mein bana sakte hain.
 
 ## 🛠️ Technology Stack
