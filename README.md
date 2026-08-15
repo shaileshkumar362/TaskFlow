@@ -22,6 +22,9 @@ Code run karne ke liye aapko apni **Google Gemini API Key** ki zaroorat padegi.
 
 ## 🛠️ Technology Stack
 
+
+
+
 * **Frontend Layer:** HTML5, CSS3, Modern Vanilla JavaScript (ES6+), Asynchronous DOM manipulation, and responsive grid layouts.
 * **Backend Layer:** Python (FastAPI / Flask framework), RESTful API architecture, modular routing, and custom data processing middleware.
 * **Algorithmic Logic:** Custom-built text parsing routines, pattern matching for temporal expressions (e.g., handling relative dates like "tomorrow"), and structured dictionary mapping.

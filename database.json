@@ -251,6 +251,42 @@
             "due_date": "2026-08-15",
             "project_id": 3,
             "completed": false
+        },
+        {
+            "id": 1600600043,
+            "title": "gym",
+            "description": "\ud83d\ude80 Execution Objective: Focus on completing 'gym' successfully by 2026-08-15.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 1989803983,
+            "title": "cricket",
+            "description": "\ud83d\udca1 Strategy: Break down 'cricket' into smaller steps and track daily progress.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 3352446197,
+            "title": "cricket",
+            "description": "\ud83d\ude80 Execution Objective: Focus on completing 'cricket' successfully by 2026-08-15.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 4,
+            "completed": false
+        },
+        {
+            "id": 2581370828,
+            "title": "Organize Weekend Cricket Practice",
+            "description": "Coordinate with the team to schedule a cricket practice session. Book the local nets or pitch, ensure all gear (bats, balls, wickets, and safety equipment) is ready, and send out the timing and venue details to all players.",
+            "priority": "medium",
+            "due_date": "Next Saturday",
+            "project_id": 5,
+            "completed": false
         }
     ]
 }
