@@ -186,11 +186,12 @@ body.dark-mode input[type="date"] {
     background-color: var(--border-color);
 }
 
-/* --- Two Column Grid --- */
+/* --- Two Column Grid & Loader Between Cards --- */
 .grid-two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    position: relative;
 }
 
 @media (max-width: 768px) {
@@ -275,11 +276,15 @@ body.dark-mode input[type="date"] {
     background-color: var(--border-color);
 }
 
-/* --- Loader Styles (Theme Integrated) --- */
+/* --- Loader Styles (Positioned between Quick Add and Manual Add) --- */
 #loadingSpinner {
     display: none;
+    grid-column: 1 / -1; /* यह लोडर को दोनों कॉलम के बीच पूरी चौड़ाई में फैला देगा */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
     text-align: center;
-    padding: 30px;
     width: 100%;
 }
 

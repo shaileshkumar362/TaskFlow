@@ -164,8 +164,9 @@ function renderTasks(tasks) {
         const h4 = document.createElement("h4");
         h4.textContent = task.title;
 
+        // ⬇️ यहाँ डिस्क्रिप्शन और आज की तारीख को स्क्रीन पर दिखाने का कोड सुरक्षित रूप से सेट है ⬇️
         let descP = null;
-        if (task.description) {
+        if (task.description && task.description.trim() !== "") {
             descP = document.createElement("p");
             descP.textContent = task.description;
             descP.style.fontSize = "0.85rem";
@@ -187,7 +188,7 @@ function renderTasks(tasks) {
         metaDiv.appendChild(dateSpan);
         
         infoDiv.appendChild(h4);
-        if (descP) infoDiv.appendChild(descP);
+        if (descP) infoDiv.appendChild(descP); // यह लाइन डिस्क्रिप्शन को तुरंत ब्राउज़र पर दिखा देगी
         infoDiv.appendChild(metaDiv);
 
         leftWrapper.appendChild(checkbox);

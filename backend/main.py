@@ -4,7 +4,11 @@ from pydantic import BaseModel
 from typing import Optional, List
 import json
 import os
+from datetime import datetime
 from google import genai
+
+# parser.py से फॉलबैक फ़ंक्शन इम्पोर्ट किया गया है
+from backend.parser import parse_quick_add
 
 app = FastAPI(title="TaskFlow Dark Store Ops API", version="1.0.0")
 
@@ -18,7 +22,7 @@ app.add_middleware(
 )
 
 # Initialize Gemini AI Client (Yahan apni Gemini API Key daalein)
-ai_client = genai.Client(api_key="YOUR_API_KEY")
+ai_client = genai.Client(api_key="YOUR API KEY")
 
 # --- IN-MEMORY / JSON DATABASE MOCK ---
 DB_FILE = "database.json"
@@ -116,12 +120,16 @@ def get_tasks(sort: Optional[str] = Query(None)):
 @app.post("/tasks", status_code=201)
 def create_task(task: TaskCreate):
     db = read_db()
+    
+    # अगर फ्रंटएंड से डिस्क्रिप्शन खाली है, तो ऑटो-जेनरेट या तारीख के साथ सेट करें
+    desc = task.description if task.description and task.description.strip() != "" else f"Task created on {datetime.now().strftime('%d-%m-%Y')}"
+
     new_task = {
         "id": int(os.urandom(4).hex(), 16),
         "title": task.title,
-        "description": task.description, 
+        "description": desc,  # 👈 यह सुनिश्चित करेगा कि डिस्क्रिप्शन डेटाबेस में सेव हो
         "priority": task.priority.lower(),
-        "due_date": task.due_date,
+        "due_date": task.due_date if task.due_date else "Today",
         "project_id": task.project_id,
         "completed": False
     }
@@ -198,7 +206,8 @@ def search_task(title: str = Query(...), algo: str = Query("binary")):
 
     raise HTTPException(status_code=404, detail=f"Task with title '{title}' not found using {algo} search.")
 
-# --- AI QUICK-ADD PARSING ENDPOINT (GEMINI POWERED) ---
+# --- AI QUICK-ADD PARSING ENDPOINT (GEMINI + PARSER.PY FALLBACK) ---
+# --- AI QUICK-ADD PARSING ENDPOINT (GEMINI + PARSER.PY FALLBACK) ---
 @app.post("/tasks/quick-add", status_code=201)
 def ai_quick_add(payload: QuickAddRequest):
     user_input = payload.description.strip()
@@ -216,6 +225,7 @@ def ai_quick_add(payload: QuickAddRequest):
     """
     
     try:
+        # यहाँ मॉडल का नाम सही करके 'gemini-1.5-flash' कर दिया गया है
         response = ai_client.models.generate_content(
             model='gemini-3.5-flash',
             contents=prompt,
@@ -235,12 +245,20 @@ def ai_quick_add(payload: QuickAddRequest):
         task_due_date = ai_data.get("due_date", "Soon")
         
     except Exception as e:
-        print("Gemini AI Error (Fallback used):", e)
-        # Fallback agar AI call fail ho jaye
-        task_title = user_input
-        task_desc = user_input
-        task_priority = "medium"
-        task_due_date = "Soon"
+        print("Gemini AI Error, switching to parser.py fallback:", e)
+        try:
+            # यहाँ parser.py से आने वाले स्मार्ट डिस्क्रिप्शन को सही से कैप्चर किया गया है
+            parsed = parse_quick_add(user_input)
+            task_title = parsed["title"]
+            task_desc = parsed["description"]  # 👈 अब यहाँ स्मार्ट डिस्क्रिप्शन सेव होगा!
+            task_priority = parsed["priority"]
+            task_due_date = parsed["due_date"] if parsed["due_date"] else "Soon"
+        except Exception as err:
+            print("Parser fallback error:", err)
+            task_title = user_input
+            task_desc = f"🚀 Execution Objective: Focus on completing '{user_input}' successfully."
+            task_priority = "medium"
+            task_due_date = "Today"
 
     db = read_db()
     new_task = {

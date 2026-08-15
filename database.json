@@ -134,6 +134,123 @@
             "due_date": "Next Monday",
             "project_id": 4,
             "completed": false
+        },
+        {
+            "id": 2332803851,
+            "title": "urgent next friday",
+            "description": "urgent next friday",
+            "priority": "medium",
+            "due_date": "Soon",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 3541329183,
+            "title": "Meeting with client due:2026-08-20 !high",
+            "description": "Meeting with client due:2026-08-20 !high",
+            "priority": "medium",
+            "due_date": "Soon",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 465891719,
+            "title": "Meeting with client",
+            "description": "Meeting with client due:2026-08-20 !high",
+            "priority": "high",
+            "due_date": "2026-08-20",
+            "project_id": 3,
+            "completed": false
+        },
+        {
+            "id": 3496300987,
+            "title": "Fix the login bug on the main page tomorrow",
+            "description": "Fix the login bug on the main page tomorrow !high",
+            "priority": "high",
+            "due_date": "Soon",
+            "project_id": 3,
+            "completed": false
+        },
+        {
+            "id": 3196394319,
+            "title": "Fix the login bug on the main page",
+            "description": "Fix the login bug on the main page tomorrow",
+            "priority": "medium",
+            "due_date": "2026-08-16",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 4196462520,
+            "title": "Organize Cricket Practice Session",
+            "description": "Organize Cricket Practice Session",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 3,
+            "completed": false
+        },
+        {
+            "id": 733649324,
+            "title": "cricket",
+            "description": "cricket",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 2416587811,
+            "title": "Python code practice",
+            "description": "Python code practice",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 2,
+            "completed": false
+        },
+        {
+            "id": 1465064804,
+            "title": "gym",
+            "description": "\ud83c\udfaf Key Focus Area: Prioritize 'gym' under MEDIUM priority guidelines.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 2613655889,
+            "title": "cricket",
+            "description": "\ud83d\ude80 Execution Objective: Focus on completing 'cricket' successfully by 2026-08-15.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 1550855933,
+            "title": "cricket",
+            "description": "\ud83d\udca1 Strategy: Break down 'cricket' into smaller steps and track daily progress.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 3,
+            "completed": false
+        },
+        {
+            "id": 3135413395,
+            "title": "Go to the Gym",
+            "description": "Complete a full-body workout session, focusing on a mix of strength training and at least 20 minutes of cardiovascular exercise. Remember to pack a water bottle, a clean towel, and post-workout nutrition.",
+            "priority": "medium",
+            "due_date": "Tomorrow",
+            "project_id": 5,
+            "completed": false
+        },
+        {
+            "id": 1266397889,
+            "title": "GYM",
+            "description": "\ud83c\udfaf Key Focus Area: Prioritize 'GYM' under MEDIUM priority guidelines.",
+            "priority": "medium",
+            "due_date": "2026-08-15",
+            "project_id": 3,
+            "completed": false
         }
     ]
 }

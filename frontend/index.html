@@ -32,7 +32,7 @@
         </section>
 
         <!-- Bottom Grid: Quick Add (AI) & Add Task Manually -->
-        <div class="grid-two-col">
+        <div class="grid-two-col" style="position: relative;">
             <!-- Quick Add (AI) -->
             <section class="panel-card">
                 <h3>⚡ QUICK ADD (AI)</h3>
@@ -48,6 +48,12 @@
                 </div>
                 <button id="addWithAiBtn" class="btn-cyan">Add with AI</button>
             </section>
+
+            <!-- 🔄 Loader यहाँ दोनों कार्ड्स के बीच में सेट कर दिया गया है -->
+            <div id="loadingSpinner" style="grid-column: 1 / -1; display: none; text-align: center; padding: 15px;">
+                <div class="spinner-circle"></div>
+                <div class="loader-text">Processing task...</div>
+            </div>
 
             <!-- Add Task Manually -->
             <section class="panel-card">
@@ -133,12 +139,6 @@
             <div id="selection-action-bar" style="display: none; background: rgba(255, 255, 255, 0.05); padding: 10px 15px; margin: 10px 0 15px 0; border-radius: 6px; align-items: center; justify-content: space-between; border: 1px solid rgba(255, 255, 255, 0.1);">
                 <span id="selected-count" style="font-size: 0.9rem; color: #fff;">0 items selected</span>
                 <button id="bulk-delete-btn" style="background: #e74c3c; color: white; border: none; padding: 6px 14px; cursor: pointer; border-radius: 4px; font-weight: 600;">Delete Selected</button>
-            </div>
-
-            <!-- ⬇️ Loader Element properly integrated ⬇️ -->
-            <div id="loadingSpinner">
-                <div class="spinner-circle"></div>
-                <div class="loader-text">Loading tasks...</div>
             </div>
 
             <div id="tasksContainer">
